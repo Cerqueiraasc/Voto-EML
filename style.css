@@ -43,7 +43,7 @@ button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparen
   box-shadow: 0 6px 0 var(--cor);
   transition: transform 150ms;
 }
-.pombo { --cor: #91bfe6; --fundo: #e2f1ff; }
+.periquito { --cor: #91bfe6; --fundo: #e2f1ff; }
 .pavao { --cor: #c3a0e5; --fundo: #f0e4ff; }
 .bichinho img { display: block; width: 100%; height: 220px; object-fit: cover; border-radius: 14px; }
 .bichinho strong { display: block; margin: 20px 0; font-size: 32px; font-weight: 900; letter-spacing: 1px; }

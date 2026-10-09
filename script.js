@@ -1,4 +1,4 @@
-const nomes = { carpa: "CARPA", pombo: "POMBO", pavao: "PAVÃO" };
+const nomes = { carpa: "CARPA", periquito: "PERIQUITO", pavao: "PAVÃO" };
 const chave = "ecoescola-votos-pelucia-v1";
 const votacao = document.getElementById("votacao");
 const agradecimento = document.getElementById("agradecimento");
@@ -15,7 +15,7 @@ function votar(animal) {
   try {
     // Os votos são guardados somente neste navegador/aparelho.
     const salvo = localStorage.getItem(chave);
-    const votos = salvo === null ? { carpa: 0, pombo: 0, pavao: 0 } : JSON.parse(salvo);
+    const votos = salvo === null ? { carpa: 0, periquito: 0, pavao: 0 } : JSON.parse(salvo);
     if (!votos || !Object.keys(nomes).every(nome => Number.isSafeInteger(votos[nome]) && votos[nome] >= 0)) {
       throw new Error("Contagem inválida");
     }
