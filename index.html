@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOTAÇÃO DOS BICHINHOS | ECOESCOLA MONTEIRO LOBATO</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 16l7 7L27 9' fill='none' stroke='%2323714b' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img class="logo" src="imagens/logo-escola.svg" alt="ECOESCOLA MONTEIRO LOBATO" width="156" height="72">
+  </header>
+
+  <main>
+    <section id="votacao" aria-labelledby="titulo">
+      <p class="chamada">HORA DE DAR SEU PALPITE!</p>
+      <h1 id="titulo">QUAL SERÁ O PRÓXIMO BICHINHO DE PELÚCIA DA ECOESCOLA?</h1>
+      <p>TOQUE NO BICHINHO PARA VOTAR!</p>
+
+      <div class="opcoes">
+        <button class="bichinho carpa" data-animal="carpa" aria-label="VOTAR EM CARPA">
+          <img src="imagens/carpa.jpg" alt="CARPAS COLORIDAS NA ÁGUA" width="480" height="360">
+          <strong>CARPA</strong>
+          <span>VOTAR</span>
+        </button>
+        <button class="bichinho pombo" data-animal="pombo" aria-label="VOTAR EM POMBO">
+          <img src="imagens/pombo.jpg" alt="POMBO CINZA" width="480" height="360">
+          <strong>POMBO</strong>
+          <span>VOTAR</span>
+        </button>
+        <button class="bichinho pavao" data-animal="pavao" aria-label="VOTAR EM PAVÃO">
+          <img src="imagens/pavao.jpg" alt="PAVÃO AZUL COM PENAS COLORIDAS" width="480" height="360">
+          <strong>PAVÃO</strong>
+          <span>VOTAR</span>
+        </button>
+      </div>
+      <p id="erro" role="alert" hidden></p>
+    </section>
+
+    <section id="agradecimento" aria-labelledby="titulo-obrigado" hidden>
+      <svg class="check" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <path d="M18 51 40 73 82 27" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <h1 id="titulo-obrigado" tabindex="-1">OBRIGADO POR VOTAR</h1>
+      <p id="confirmacao" role="status"></p>
+      <button id="proxima" class="botao">VOTAR NOVAMENTE</button>
+    </section>
+    <noscript>ATIVE O JAVASCRIPT DO NAVEGADOR PARA PARTICIPAR DA VOTAÇÃO.</noscript>
+  </main>
+
+  <footer>FEITO POR - ARTHUR CERQUEIRA - PROFESSOR MAKER</footer>
+</body>
+</html>

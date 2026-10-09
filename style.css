@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("imagens/nunito-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("imagens/nunito-black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fffbea;
+  color: #234b38;
+  font-family: "Nunito", "Trebuchet MS", Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+header { background: #23714b; padding: 20px; border-bottom: 6px solid #ffd75b; }
+.logo { display: block; margin: auto; max-width: 100%; }
+main { flex: 1; width: 100%; max-width: 1100px; margin: auto; padding: 36px 24px; }
+.chamada { font-size: 14px; font-weight: bold; letter-spacing: 1px; }
+h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; line-height: 1.2; margin: 18px 0; text-wrap: balance; }
+p { font-size: 18px; line-height: 1.5; }
+.opcoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 32px 0; }
+button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.carpa { --cor: #f0b664; --fundo: #fff0d4; }
+.bichinho {
+  padding: 12px 12px 20px;
+  border: 3px solid var(--cor);
+  border-radius: 24px;
+  background: white;
+  color: #234b38;
+  box-shadow: 0 6px 0 var(--cor);
+  transition: transform 150ms;
+}
+.pombo { --cor: #91bfe6; --fundo: #e2f1ff; }
+.pavao { --cor: #c3a0e5; --fundo: #f0e4ff; }
+.bichinho img { display: block; width: 100%; height: 220px; object-fit: cover; border-radius: 14px; }
+.bichinho strong { display: block; margin: 20px 0; font-size: 32px; font-weight: 900; letter-spacing: 1px; }
+.bichinho span { display: block; border-radius: 12px; background: var(--fundo); padding: 14px 8px; font-size: 14px; font-weight: bold; }
+.bichinho:hover { transform: translateY(-4px); }
+.bichinho:active { transform: translateY(3px); }
+button:focus-visible { outline: 4px solid #234b38; outline-offset: 5px; }
+button:disabled { opacity: .6; cursor: wait; }
+#agradecimento { padding: 24px 0; }
+.check { display: block; width: 120px; height: 120px; margin: 16px auto 28px; color: var(--cor); }
+#agradecimento .botao { margin-top: 28px; }
+.botao { border: 0; border-radius: 16px; background: #23714b; color: white; padding: 20px 28px; min-height: 56px; font-weight: bold; box-shadow: 0 5px 0 #164a31; }
+#erro { color: #9b2323; background: white; border: 2px solid #9b2323; padding: 16px; border-radius: 12px; }
+footer { padding: 24px; color: #536958; font-size: 12px; letter-spacing: 1px; }
+@media (max-width: 650px) {
+  main { padding: 24px 18px; }
+  .opcoes { grid-template-columns: 1fr; max-width: 350px; margin: 28px auto; }
+  .bichinho img { height: 210px; }
+  .bichinho strong { margin: 14px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .bichinho { transition: none; } }
