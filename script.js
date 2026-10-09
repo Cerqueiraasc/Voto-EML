@@ -15,8 +15,11 @@ function votar(animal) {
   try {
     // Os votos são guardados somente neste navegador/aparelho.
     const salvo = localStorage.getItem(chave);
-    const votos = salvo === null ? { carpa: 0, periquito: 0, pavao: 0 } : JSON.parse(salvo);
-    if (!votos || !Object.keys(nomes).every(nome => Number.isSafeInteger(votos[nome]) && votos[nome] >= 0)) {
+    const votos = salvo === null ? {} : JSON.parse(salvo);
+    if (!votos || typeof votos !== "object") throw new Error("Contagem inválida");
+    // Bichinhos novos (ex.: periquito, que substituiu o pombo) começam com 0 votos.
+    Object.keys(nomes).forEach(nome => { if (!(nome in votos)) votos[nome] = 0; });
+    if (!Object.keys(nomes).every(nome => Number.isSafeInteger(votos[nome]) && votos[nome] >= 0)) {
       throw new Error("Contagem inválida");
     }
     votos[animal] += 1;
@@ -30,7 +33,8 @@ function votar(animal) {
     agradecimento.hidden = false;
     document.getElementById("titulo-obrigado").focus();
     window.scrollTo(0, 0);
-  } catch {
+  } catch (falha) {
+    console.error("Erro ao guardar o voto:", falha);
     votou = false;
     botoes.forEach(botao => { botao.disabled = false; });
     erro.textContent = "NÃO FOI POSSÍVEL GUARDAR SEU VOTO NESTE NAVEGADOR. PEÇA AJUDA A UM ADULTO PARA TENTAR NOVAMENTE.";
